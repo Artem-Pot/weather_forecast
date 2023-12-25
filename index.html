@@ -9,6 +9,61 @@
     <title>Прогноз погоды</title>
   </head>
   <body>
+    <main>
+      <section class="container">
+        <div class="date">
+          <div class="date__title">Текущее время</div>
+          <div class="date__time">09:00</div>
+          <div class="date__day">Понедельник, 25 декабря</div>
+        </div>
+        <div class="indicators">
+          <div class="indicators__box">
+            <div class="indicators__wrapper">
+              <div class="indicators__temperature">24° С</div>
+              <div class="indicators__feels">22° С</div>
+            </div>
+            <div class="indicators__wrapper">
+              <div class="indicators__sunrise-title">Восход</div>
+              <div class="indicators__sunrise-time">08:20</div>
+            </div>
+            <div class="indicators__wrapper">
+              <div class="indicators__sunset-title">Закат</div>
+              <div class="indicators__sunset-time">05:05</div>
+            </div>
+          </div>
+          <div class="indicators__box">
+            <div class="indicators__weather-img">Солнышко имг</div>
+            <div class="indicators__weather-title">Солнечно</div>
+          </div>
+          <div class="indicators__box">
+            <div class="indicators__humidity"><img class="indicators__humidity-img">
+              <div class="indicators__humidity-indicator">41%</div>
+              <div class="indicators__humidity-title">Влажность</div>
+            </div>
+            <div class="indicators__pressure"><img class="indicators__pressure-img">
+              <div class="indicators__pressure-indicator">997 мм/рс</div>
+              <div class="indicators__pressure-title">Давление</div>
+            </div>
+          </div>
+          <div class="indicators__box">
+            <div class="indicators__wind"><img class="indicators__wind-img">
+              <div class="indicators__wind-indicator">2 км/ч</div>
+              <div class="indicators__wind-title">Ветер</div>
+            </div>
+            <div class="indicators__ultraviolet"><img class="indicators__ultraviolet-img">
+              <div class="indicators__ultraviolet-indicator">8</div>
+              <div class="indicators__ultraviolet-title">Ультрафиолет</div>
+            </div>
+          </div>
+        </div>
+        <div class="week">
+          <div class="week__title">Прогноз на 5 дней</div>
+          <div class="week__box">
+            <div class="week__img"></div>
+          </div>
+        </div>
+      </section>
+    </main>
     <script src="scripts/scripts.js"></script>
   </body>
 </html>
