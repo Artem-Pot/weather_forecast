@@ -11,55 +11,59 @@
   <body>
     <main>
       <section class="container">
-        <div class="date">
-          <div class="date__title">Текущее время</div>
-          <div class="date__time">09:00</div>
-          <div class="date__day">Понедельник, 25 декабря</div>
-        </div>
+        <div class="date"><span class="date__title">Текущее время</span><span class="date__time">09:00</span><span class="date__day">Понедельник, 25 декабря</span></div>
         <div class="indicators">
           <div class="indicators__box">
-            <div class="indicators__wrapper">
-              <div class="indicators__temperature">24° С</div>
-              <div class="indicators__feels">22° С</div>
-            </div>
-            <div class="indicators__wrapper">
-              <div class="indicators__sunrise-title">Восход</div>
-              <div class="indicators__sunrise-time">08:20</div>
-            </div>
-            <div class="indicators__wrapper">
-              <div class="indicators__sunset-title">Закат</div>
-              <div class="indicators__sunset-time">05:05</div>
-            </div>
+            <div class="indicators__block"><span class="indicators__temperature">24°С</span><span class="indicators__feels">Ощущается как: 22°С</span></div>
+            <div class="indicators__sunrise"><span class="indicators__sunrise-title">Восход</span><span class="indicators__sunrise-time">08:20</span></div>
+            <div class="indicators__sunset"><span class="indicators__sunset-title">Закат</span><span class="indicators__sunset-time">05:05</span></div>
+          </div>
+          <div class="indicators__box"><span class="indicators__weather-img"></span><span class="indicators__weather-title">Солнечно</span></div>
+          <div class="indicators__box">
+            <div class="indicators__humidity"><img class="indicators__humidity-img"><span class="indicators__humidity-indicator">41%</span><span class="indicators__humidity-title">Влажность</span></div>
+            <div class="indicators__pressure"><img class="indicators__pressure-img"><span class="indicators__pressure-indicator">997 мм/рс</span><span class="indicators__pressure-title">Давление</span></div>
           </div>
           <div class="indicators__box">
-            <div class="indicators__weather-img">Солнышко имг</div>
-            <div class="indicators__weather-title">Солнечно</div>
-          </div>
-          <div class="indicators__box">
-            <div class="indicators__humidity"><img class="indicators__humidity-img">
-              <div class="indicators__humidity-indicator">41%</div>
-              <div class="indicators__humidity-title">Влажность</div>
-            </div>
-            <div class="indicators__pressure"><img class="indicators__pressure-img">
-              <div class="indicators__pressure-indicator">997 мм/рс</div>
-              <div class="indicators__pressure-title">Давление</div>
-            </div>
-          </div>
-          <div class="indicators__box">
-            <div class="indicators__wind"><img class="indicators__wind-img">
-              <div class="indicators__wind-indicator">2 км/ч</div>
-              <div class="indicators__wind-title">Ветер</div>
-            </div>
-            <div class="indicators__ultraviolet"><img class="indicators__ultraviolet-img">
-              <div class="indicators__ultraviolet-indicator">8</div>
-              <div class="indicators__ultraviolet-title">Ультрафиолет</div>
-            </div>
+            <div class="indicators__wind"><img class="indicators__wind-img"><span class="indicators__wind-indicator">2 км/ч</span><span class="indicators__wind-title">Ветер</span></div>
+            <div class="indicators__ultraviolet"><img class="indicators__ultraviolet-img"><span class="indicators__ultraviolet-indicator">8</span><span class="indicators__ultraviolet-title">Ультрафиолет</span></div>
           </div>
         </div>
         <div class="week">
           <div class="week__title">Прогноз на 5 дней</div>
-          <div class="week__box">
-            <div class="week__img"></div>
+          <div class="week__box"><img class="week__img"><span class="week__temperature">20°С</span><span class="week__day">Понедельник, 1 сентября</span></div>
+          <div class="week__box"><img class="week__img"><span class="week__temperature">21°С</span><span class="week__day">Вторник, 2 сентября</span></div>
+          <div class="week__box"><img class="week__img"><span class="week__temperature">22°С</span><span class="week__day">Среда, 3 сентября</span></div>
+          <div class="week__box"><img class="week__img"><span class="week__temperature">23°С</span><span class="week__day">Четверг, 4 сентября</span></div>
+          <div class="week__box"><img class="week__img"><span class="week__temperature">24°С</span><span class="week__day">Пятница, 5 сентября</span></div>
+        </div>
+        <div class="today">
+          <div class="today__title">Почасовой прогноз</div>
+          <div class="today__wrapper">
+            <div class="today__box">
+              <div class="today__time">12:00</div><img class="today__img-ico">
+              <div class="today__temperature">26°С</div><img class="today__img-direction">
+              <div class="today__speed">3км/ч</div>
+            </div>
+            <div class="today__box">
+              <div class="today__time">13:00</div><img class="today__img-ico">
+              <div class="today__temperature">27°С</div><img class="today__img-direction">
+              <div class="today__speed">2км/ч</div>
+            </div>
+            <div class="today__box">
+              <div class="today__time">14:00</div><img class="today__img-ico">
+              <div class="today__temperature">26°С</div><img class="today__img-direction">
+              <div class="today__speed">3км/ч</div>
+            </div>
+            <div class="today__box">
+              <div class="today__time">15:00</div><img class="today__img-ico">
+              <div class="today__temperature">27°С</div><img class="today__img-direction">
+              <div class="today__speed">3 км/ч</div>
+            </div>
+            <div class="today__box">
+              <div class="today__time">16:00</div><img class="today__img-ico">
+              <div class="today__temperature">28°С</div><img class="today__img-direction">
+              <div class="today__speed">3 км/ч</div>
+            </div>
           </div>
         </div>
       </section>
