@@ -9,14 +9,4 @@ html(lang="ru")
         title= "Прогноз погоды"
     body
         include main.pug
-        script(src="scripts/scripts.js")
-        
-
-
-//- https://open-meteo.com/
-    https://openweathermap.org/
-    https://www.npmjs.com/package/openweathermap
-    https://rapidapi.com/blog/access-global-weather-data-with-these-weather-apis/
-
-    запуск препроцессора pug: pug -w pug/index.pug -o ./ -P
-    запуск scss через нижнюю менюшку watch sass
+        script(src="scripts.mjs" type="module")
