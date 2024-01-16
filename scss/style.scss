@@ -2,16 +2,49 @@
 
 body {
     background-color: #373636;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
-  position: absolute;
-  top: calc(50% - 200px);
-  left: calc(50% - 400px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form {
+  background-color: rgb(90, 78, 61);
+  width: 800px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form__search {
+  padding: 5px;
+
+}
+
+.form__button {
+  width: 100px;
+  height: 30px;
+  background-color: rgb(230, 179, 113);
+  &:hover {
+    background-color: rgb(211, 187, 155);
+  }
+}
+
+.box__indicators {
   width: 800px;
   height: 400px;
   background-color: chocolate;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -53,7 +86,6 @@ body {
 .indicators__box {
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   width: 22%;
   gap: 5px;
@@ -121,7 +153,9 @@ body {
 }
 
 .indicators__humidity {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .indicators__humidity-img {
@@ -137,7 +171,9 @@ body {
 }
 
 .indicators__pressure {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .indicators__pressure-img {
@@ -153,7 +189,9 @@ body {
 }
 
 .indicators__wind {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .indicators__wind-img {
@@ -169,7 +207,9 @@ body {
 }
 
 .indicators__ultraviolet {
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .indicators__ultraviolet-img {

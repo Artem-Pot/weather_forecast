@@ -1,97 +1,101 @@
 main
     section.container
-        .date
-            span.date__title Текущее время
-            span.date__time 09:00
-            span.date__day Понедельник, 25 декабря
-        .indicators
-            .indicators__box
-                .indicators__block
-                    span.indicators__temperature 24°С
-                    span.indicators__feels Ощущается как: 22°С
-                .indicators__sunrise
-                    span.indicators__sunrise-title Восход
-                    span.indicators__sunrise-time 08:20
-                .indicators__sunset
-                    span.indicators__sunset-title Закат
-                    span.indicators__sunset-time 05:05
-            .indicators__box
-                span.indicators__weather-img
-                span.indicators__weather-title Солнечно
-            .indicators__box
-                .indicators__humidity
-                    img.indicators__humidity-img
-                    span.indicators__humidity-indicator 41%
-                    span.indicators__humidity-title Влажность
-                .indicators__pressure
-                    img.indicators__pressure-img
-                    span.indicators__pressure-indicator 997 мм/рс
-                    span.indicators__pressure-title Давление
-            .indicators__box
-                .indicators__wind
-                    img.indicators__wind-img
-                    span.indicators__wind-indicator 2 км/ч
-                    span.indicators__wind-title Ветер
-                .indicators__ultraviolet
-                    img.indicators__ultraviolet-img
-                    span.indicators__ultraviolet-indicator 8
-                    span.indicators__ultraviolet-title Ультрафиолет
-        .week
-            .week__title Прогноз на 5 дней
-            .week__box
-                img.week__img
-                span.week__temperature 20°С
-                span.week__day Понедельник, 1 сентября
-            .week__box
-                img.week__img
-                span.week__temperature 21°С
-                span.week__day Вторник, 2 сентября
-            .week__box
-                img.week__img
-                span.week__temperature 22°С
-                span.week__day Среда, 3 сентября
-            .week__box
-                img.week__img
-                span.week__temperature 23°С
-                span.week__day Четверг, 4 сентября
-            .week__box
-                img.week__img
-                span.week__temperature 24°С
-                span.week__day Пятница, 5 сентября
-        
-        .today
-            .today__title Почасовой прогноз
-            .today__wrapper
-                .today__box
-                    .today__time 12:00
-                    img.today__img-ico 
-                    .today__temperature 26°С
-                    img.today__img-direction
-                    .today__speed 3км/ч
-                .today__box
-                    .today__time 13:00
-                    img.today__img-ico 
-                    .today__temperature 27°С
-                    img.today__img-direction
-                    .today__speed 2км/ч
-                .today__box
-                    .today__time 14:00
-                    img.today__img-ico 
-                    .today__temperature 26°С
-                    img.today__img-direction
-                    .today__speed 3км/ч
-                .today__box
-                    .today__time 15:00
-                    img.today__img-ico
-                    .today__temperature 27°С
-                    img.today__img-direction
-                    .today__speed 3 км/ч
-                .today__box
-                    .today__time 16:00
-                    img.today__img-ico
-                    .today__temperature 28°С
-                    img.today__img-direction
-                    .today__speed 3 км/ч
+        form.form
+            input(class="form__search" type="text" placeholder="Введи название города")
+            button(class="form__button" type="button") Найти
+        .box__indicators
+            .date
+                span.date__title Текущее время
+                span.date__time 09:00
+                span.date__day Понедельник, 25 декабря
+            .indicators
+                .indicators__box
+                    .indicators__block
+                        span.indicators__temperature 24°С
+                        span.indicators__feels Ощущается как: 22°С
+                    .indicators__sunrise
+                        span.indicators__sunrise-title Восход
+                        span.indicators__sunrise-time 08:20
+                    .indicators__sunset
+                        span.indicators__sunset-title Закат
+                        span.indicators__sunset-time 05:05
+                .indicators__box
+                    span.indicators__weather-img
+                    span.indicators__weather-title Солнечно
+                .indicators__box
+                    .indicators__humidity
+                        img.indicators__humidity-img
+                        span.indicators__humidity-indicator 41%
+                        span.indicators__humidity-title Влажность
+                    .indicators__pressure
+                        img.indicators__pressure-img
+                        span.indicators__pressure-indicator 997 мм/рс
+                        span.indicators__pressure-title Давление
+                .indicators__box
+                    .indicators__wind
+                        img.indicators__wind-img
+                        span.indicators__wind-indicator 2 км/ч
+                        span.indicators__wind-title Ветер
+                    .indicators__ultraviolet
+                        img.indicators__ultraviolet-img
+                        span.indicators__ultraviolet-indicator 8
+                        span.indicators__ultraviolet-title Ультрафиолет
+            .week
+                .week__title Прогноз на 5 дней
+                .week__box
+                    img.week__img
+                    span.week__temperature 20°С
+                    span.week__day Понедельник, 1 сентября
+                .week__box
+                    img.week__img
+                    span.week__temperature 21°С
+                    span.week__day Вторник, 2 сентября
+                .week__box
+                    img.week__img
+                    span.week__temperature 22°С
+                    span.week__day Среда, 3 сентября
+                .week__box
+                    img.week__img
+                    span.week__temperature 23°С
+                    span.week__day Четверг, 4 сентября
+                .week__box
+                    img.week__img
+                    span.week__temperature 24°С
+                    span.week__day Пятница, 5 сентября
+            
+            .today
+                .today__title Почасовой прогноз
+                .today__wrapper
+                    .today__box
+                        .today__time 12:00
+                        img.today__img-ico 
+                        .today__temperature 26°С
+                        img.today__img-direction
+                        .today__speed 3км/ч
+                    .today__box
+                        .today__time 13:00
+                        img.today__img-ico 
+                        .today__temperature 27°С
+                        img.today__img-direction
+                        .today__speed 2км/ч
+                    .today__box
+                        .today__time 14:00
+                        img.today__img-ico 
+                        .today__temperature 26°С
+                        img.today__img-direction
+                        .today__speed 3км/ч
+                    .today__box
+                        .today__time 15:00
+                        img.today__img-ico
+                        .today__temperature 27°С
+                        img.today__img-direction
+                        .today__speed 3 км/ч
+                    .today__box
+                        .today__time 16:00
+                        img.today__img-ico
+                        .today__temperature 28°С
+                        img.today__img-direction
+                        .today__speed 3 км/ч
 
                 
 
