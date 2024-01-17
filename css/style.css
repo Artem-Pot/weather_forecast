@@ -167,6 +167,16 @@ body {
   gap: 20px;
 }
 
+.date__box-date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100px;
+}
+
 .indicators {
   background-color: rgb(45, 138, 118);
   width: 500px;

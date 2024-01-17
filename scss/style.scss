@@ -68,8 +68,10 @@ body {
 
 }
 
-.date__day {
-
+.date__box-date {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
 }
 
 //---------блок с показателями погоды
