@@ -18,8 +18,12 @@ main
             .indicators
                 .indicators__box
                     .indicators__block
-                        span.indicators__temperature 24°С
-                        span.indicators__feels Ощущается как: 22°С
+                        .indicators__box-temperature
+                            span.indicators__text-temperature Температура: 
+                            span.indicators__temperature °С
+                        .indicators__box-feeling
+                            span.indicators__text-feeling Ощущается как: 
+                            span.indicators__feeling °С
                     .indicators__sunrise
                         span.indicators__sunrise-title Восход
                         span.indicators__sunrise-time 08:20
@@ -28,25 +32,25 @@ main
                         span.indicators__sunset-time 05:05
                 .indicators__box
                     span.indicators__weather-img
-                    span.indicators__weather-title Солнечно
+                    span.indicators__weather-title
                 .indicators__box
                     .indicators__humidity
                         img.indicators__humidity-img
-                        span.indicators__humidity-indicator 41%
+                        span.indicators__humidity-indicator %
                         span.indicators__humidity-title Влажность
                     .indicators__pressure
                         img.indicators__pressure-img
-                        span.indicators__pressure-indicator 997 мм/рс
+                        span.indicators__pressure-indicator мм / рс
                         span.indicators__pressure-title Давление
                 .indicators__box
                     .indicators__wind
                         img.indicators__wind-img
-                        span.indicators__wind-indicator 2 км/ч
+                        span.indicators__wind-indicator м/с
                         span.indicators__wind-title Ветер
                     .indicators__ultraviolet
-                        img.indicators__ultraviolet-img
-                        span.indicators__ultraviolet-indicator 8
-                        span.indicators__ultraviolet-title Ультрафиолет
+                        img.indicators__directionWind-img
+                        span.indicators__directionWind-indicator
+                        span.indicators__directionWind-title Направление
             .week
                 .week__title Прогноз на 5 дней
                 .week__box

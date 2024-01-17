@@ -1,8 +1,9 @@
+// разблокировать когда всё закончу 
 const url = 'http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=Togliatti&aqi=no';
 const response = await fetch(url);
 const result = await response.json();
-
 console.log(JSON.stringify(result));
+
 //-------------- Блок текущая дата
 //город
 const dateCity = document.querySelector('.date__city');
@@ -40,9 +41,297 @@ function checkTime(i) {
   startTime();
 
 //----- Блок индикаторы 
+//температура
+const indicatorsTemperature  = document.querySelector('.indicators__temperature');
+indicatorsTemperature.insertAdjacentHTML('beforebegin',`${Math.round((JSON.stringify(result.current.temp_c)))}`);
+
+//ощущается как
+const indicatorsFeeling  = document.querySelector('.indicators__feeling');
+indicatorsFeeling.insertAdjacentHTML('beforebegin',`${Math.round((JSON.stringify(result.current.feelslike_c)))}`);
+
+//влажность
+const indicatorsHumidity = document.querySelector('.indicators__humidity-indicator');
+indicatorsHumidity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.current.humidity))}`);
+
+//давление
+const indicatorsPressure = document.querySelector('.indicators__pressure-indicator');
+indicatorsPressure.insertAdjacentHTML('beforebegin',`${Math.round(JSON.stringify(result.current.pressure_mb) * 0.750063755419211)}`);
+
+//ветер
+const indicatorsWind = document.querySelector('.indicators__wind-indicator');
+indicatorsWind.insertAdjacentHTML('beforebegin',`${Math.round(JSON.stringify(result.current.wind_kph) * 0.27777777778)}`);
+
+//направление ветра
+const directionWind = document.querySelector('.indicators__directionWind-indicator');
+const direction = '';
+directionWind.insertAdjacentHTML('beforebegin',`${directionWindFunc()}`);
+
+function directionWindFunc(direction) {
+    switch(result.current.wind_dir) {
+        case 'N':  
+        direction = `Северный`;
+          break;
+      
+        case 'NNE': 
+        direction = `Северо-северо-восточный`;
+          break;
+
+        case 'NE': 
+        direction = `Северо-восточный`; 
+          break;
+
+        case 'ENE': 
+        direction = `Востоко-северо-восточный`; 
+          break;
+
+        case 'Е': 
+        direction = `Восточный`; 
+          break;
+
+        case 'ESE': 
+        direction = `Востоко-юго-восточный`; 
+          break;
+
+         case 'SE': 
+         direction = `Юго-восточный`; 
+          break;
+
+        case 'SSE': 
+        direction = `Юго-юго-восточный`; 
+          break;
+
+        case 'S': 
+        direction = `Южный`; 
+          break;
+
+        case 'SSW': 
+        direction = `Юго-юго-западный`; 
+          break;
+          
+        case 'SW': 
+        direction = `Юго-западный`; 
+          break;
+
+        case 'WSW': 
+        direction = `Западо-юго-западный`; 
+          break;
+
+        case 'W': 
+        direction = `Западный`; 
+          break;
+
+        case 'WNW': 
+        direction = `Западо-северо-западный`; 
+          break;
+
+        case 'NW': 
+          direction = `Северо-западный`; 
+            break;
+
+        case 'NNW': 
+            direction = `Северо-северо-западный`; 
+            break;   
+      }
+      return direction;
+}
+
+//погода
+const indicatorsWeather = document.querySelector('.indicators__weather-title');
+const weather = '';
+indicatorsWeather.insertAdjacentHTML('beforebegin',`${WindFunc()}`);
+
+function WindFunc(weather) {
+    switch(result.current.condition.text) {
+        case 'Sunny':  
+        weather = `Солнечно`;
+          break;
+        
+        case 'Cloudy':  
+        weather = `Облачно`;
+          break;
+          
+        case 'Partly cloudy': 
+        weather = `Переменная облачность`;
+          break;
+
+        case 'Overcast': 
+        weather = `Пасмурная погода`; 
+          break;
+
+        case 'Mist': 
+        weather = `Туман`; 
+          break;
+
+        case 'Patchy rain possible': 
+        weather = `Возможен кратковременный дождь`; 
+        break;
+        
+        case 'Patchy snow possible': 
+        weather = `Возможен кратковременный снег`; 
+        break;
+
+        case 'Patchy sleet possible': 
+        weather = `Возможен кратковременный мокрый снег`; 
+        break;
+
+        case 'Patchy freezing drizzle possible': 
+        weather = `Возможен кратковременный ледяной дождь`; 
+        break;
+
+        case 'Thundery outbreaks possible': 
+        weather = `Возможны грозовые вспышки`; 
+        break;
+
+        case 'Blowing snow': 
+        weather = `Метель`; 
+        break;
+
+        case 'Blizzard': 
+        weather = `Метель`; 
+        break;
+
+        case 'Fog': 
+        weather = `Туман`; 
+        break;
+
+        case 'Freezing fog': 
+        weather = `Ледяной туман`; 
+        break;
+
+        case 'Patchy light drizzle': 
+        weather = `Небольшой мелкий дождь`; 
+        break;
+
+        case 'Light drizzle': 
+        weather = `Легкая морось`; 
+        break;
+
+        case 'Freezing drizzle': 
+        weather = `Изморозь`; 
+        break;
+
+        case 'Heavy freezing drizzle': 
+        weather = `Сильный ледяной дождь`; 
+        break;
+
+        case 'Patchy light rain': 
+        weather = `Небольшой дождь`; 
+        break;
+
+        case 'Light rain': 
+        weather = `Легкий дождь`; 
+        break;
+
+        case 'Moderate rain at times': 
+        weather = `Временами умеренный дождь`; 
+        break;
+
+        case 'Moderate rain': 
+        weather = `Умеренный дождь`; 
+        break;
+
+        case 'Heavy rain at times': 
+        weather = `Временами сильный дождь`; 
+        break;
+
+        case 'Heavy rain': 
+        weather = `Ливень`; 
+        break;
+
+        case 'Light freezing rain': 
+        weather = `Легкий ледяной дождь`; 
+        break;
+
+        case 'Moderate or heavy freezing rain': 
+        weather = `Умеренный или сильный ледяной дождь`; 
+        break;
+
+        case 'Light sleet': 
+        weather = `Легкий мокрый снег`; 
+        break;
+        
+        case 'Moderate or heavy sleet': 
+        weather = `Умеренный или сильный мокрый снег`; 
+        break;
+
+        case 'Patchy light snow': 
+        weather = `Небольшой мелкий снег`; 
+        break;
+
+        case 'Light snow': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+
+        case '-----Light snow-----': 
+        weather = `Легкий снег`; 
+        break;
+      }
+
+      
+      return weather;
+}
 
 //{"location":{"name":"Togliatti","region":"Samara","country":"Russia","lat":53.52,"lon":49.41,"tz_id":"Europe/Samara","localtime_epoch":1705464317,"localtime":"2024-01-17 8:05"},"current":{"last_updated_epoch":1705464000,"last_updated":"2024-01-17 08:00","temp_c":-3.7,"temp_f":25.3,"is_day":0,"condition":{"text":"Blizzard","icon":"//cdn.weatherapi.com/weather/64x64/night/230.png","code":1117},"wind_mph":22.8,"wind_kph":36.7,"wind_degree":187,"wind_dir":"S","pressure_mb":1005,"pressure_in":29.66,"precip_mm":0.27,"precip_in":0.01,"humidity":93,"cloud":100,"feelslike_c":-12.1,"feelslike_f":10.2,"vis_km":0,"vis_miles":0,"uv":1,"gust_mph":35.1,"gust_kph":56.4}}
   
-
-
   
+//база городов на английском
