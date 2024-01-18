@@ -9,15 +9,19 @@ console.log(JSON.stringify(result));
 const dateCity = document.querySelector('.date__city');
 dateCity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.location.name).slice(1,-1)).toUpperCase()}`);
 
-//день недели и месяц
-const days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-const month =['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+//день недели
 const newDate = new Date();
 
-//день недели
+const days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
 const dateWeekDay  = document.querySelector('.date__week-day');
 dateWeekDay.insertAdjacentHTML('beforebegin',`${days[newDate.getDay()]}`);
+
+//текущий день месяца
+const dateDay  = document.querySelector('.date__day');
+dateDay.insertAdjacentHTML('beforebegin',`${newDate.getDate()}`);
+
 //месяц
+const month =['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
 const dateMonth  = document.querySelector('.date__month');
 dateMonth.insertAdjacentHTML('beforebegin',`${month[newDate.getMonth()]}`);
 
@@ -69,65 +73,50 @@ directionWind.insertAdjacentHTML('beforebegin',`${directionWindFunc()}`);
 function directionWindFunc(direction) {
     switch(result.current.wind_dir) {
         case 'N':  
-        direction = `Северный`;
+          direction = `Северный`;
           break;
-      
         case 'NNE': 
-        direction = `Северо-северо-восточный`;
+          direction = `Северо-северо-восточный`;
           break;
-
         case 'NE': 
-        direction = `Северо-восточный`; 
+          direction = `Северо-восточный`; 
           break;
-
         case 'ENE': 
-        direction = `Востоко-северо-восточный`; 
+          direction = `Востоко-северо-восточный`; 
           break;
-
         case 'Е': 
-        direction = `Восточный`; 
+          direction = `Восточный`; 
           break;
-
         case 'ESE': 
-        direction = `Востоко-юго-восточный`; 
+          direction = `Востоко-юго-восточный`; 
           break;
-
          case 'SE': 
-         direction = `Юго-восточный`; 
+          direction = `Юго-восточный`; 
           break;
-
         case 'SSE': 
-        direction = `Юго-юго-восточный`; 
+          direction = `Юго-юго-восточный`; 
           break;
-
         case 'S': 
-        direction = `Южный`; 
+          direction = `Южный`; 
           break;
-
         case 'SSW': 
-        direction = `Юго-юго-западный`; 
+          direction = `Юго-юго-западный`; 
           break;
-          
         case 'SW': 
-        direction = `Юго-западный`; 
+          direction = `Юго-западный`; 
           break;
-
         case 'WSW': 
-        direction = `Западо-юго-западный`; 
+          direction = `Западо-юго-западный`; 
           break;
-
         case 'W': 
-        direction = `Западный`; 
+          direction = `Западный`; 
           break;
-
         case 'WNW': 
-        direction = `Западо-северо-западный`; 
+          direction = `Западо-северо-западный`; 
           break;
-
         case 'NW': 
-          direction = `Северо-западный`; 
+            direction = `Северо-западный`; 
             break;
-
         case 'NNW': 
             direction = `Северо-северо-западный`; 
             break;   
@@ -145,191 +134,158 @@ function WindFunc(weather) {
         case 'Sunny':  
         weather = `Солнечно`;
           break;
-        
         case 'Cloudy':  
-        weather = `Облачно`;
+          weather = `Облачно`;
           break;
-          
         case 'Partly cloudy': 
-        weather = `Переменная облачность`;
+          weather = `Переменная облачность`;
           break;
-
         case 'Overcast': 
-        weather = `Пасмурная погода`; 
+         weather = `Пасмурная погода`; 
           break;
-
         case 'Mist': 
-        weather = `Туман`; 
+          weather = `Туман`; 
           break;
-
         case 'Patchy rain possible': 
-        weather = `Возможен кратковременный дождь`; 
-        break;
-        
+          weather = `Возможен кратковременный дождь`; 
+          break;
         case 'Patchy snow possible': 
-        weather = `Возможен кратковременный снег`; 
-        break;
-
+          weather = `Возможен кратковременный снег`; 
+          break;
         case 'Patchy sleet possible': 
-        weather = `Возможен кратковременный мокрый снег`; 
-        break;
-
+          weather = `Возможен кратковременный мокрый снег`; 
+          break;
         case 'Patchy freezing drizzle possible': 
-        weather = `Возможен кратковременный ледяной дождь`; 
-        break;
-
+          weather = `Возможен кратковременный ледяной дождь`; 
+          break;
         case 'Thundery outbreaks possible': 
-        weather = `Возможны грозовые вспышки`; 
-        break;
-
+          weather = `Возможны грозовые вспышки`; 
+          break;
         case 'Blowing snow': 
-        weather = `Метель`; 
-        break;
-
+          weather = `Метель`; 
+          break;
         case 'Blizzard': 
-        weather = `Метель`; 
-        break;
-
+          weather = `Метель`; 
+          break;
         case 'Fog': 
-        weather = `Туман`; 
-        break;
-
+          weather = `Туман`; 
+          break;
         case 'Freezing fog': 
-        weather = `Ледяной туман`; 
-        break;
-
+          weather = `Ледяной туман`; 
+          break;
         case 'Patchy light drizzle': 
-        weather = `Небольшой мелкий дождь`; 
-        break;
-
+          weather = `Небольшой мелкий дождь`; 
+          break;
         case 'Light drizzle': 
-        weather = `Легкая морось`; 
-        break;
-
+          weather = `Легкая морось`; 
+          break;
         case 'Freezing drizzle': 
-        weather = `Изморозь`; 
-        break;
-
+          weather = `Изморозь`; 
+          break;
         case 'Heavy freezing drizzle': 
-        weather = `Сильный ледяной дождь`; 
-        break;
-
+          weather = `Сильный ледяной дождь`; 
+          break;
         case 'Patchy light rain': 
-        weather = `Небольшой дождь`; 
-        break;
-
+          weather = `Небольшой дождь`; 
+          break;
         case 'Light rain': 
-        weather = `Легкий дождь`; 
-        break;
-
+          weather = `Легкий дождь`; 
+          break;
         case 'Moderate rain at times': 
-        weather = `Временами умеренный дождь`; 
-        break;
-
+          weather = `Временами умеренный дождь`; 
+          break;
         case 'Moderate rain': 
-        weather = `Умеренный дождь`; 
-        break;
-
+          weather = `Умеренный дождь`; 
+          break;
         case 'Heavy rain at times': 
-        weather = `Временами сильный дождь`; 
-        break;
-
+          weather = `Временами сильный дождь`; 
+          break;
         case 'Heavy rain': 
-        weather = `Ливень`; 
-        break;
-
+          weather = `Ливень`; 
+          break;
         case 'Light freezing rain': 
-        weather = `Легкий ледяной дождь`; 
-        break;
-
+          weather = `Легкий ледяной дождь`; 
+          break;
         case 'Moderate or heavy freezing rain': 
-        weather = `Умеренный или сильный ледяной дождь`; 
-        break;
-
+          weather = `Умеренный или сильный ледяной дождь`; 
+          break;
         case 'Light sleet': 
-        weather = `Легкий мокрый снег`; 
-        break;
-        
+          weather = `Легкий мокрый снег`; 
+          break;
         case 'Moderate or heavy sleet': 
-        weather = `Умеренный или сильный мокрый снег`; 
-        break;
-
+          weather = `Умеренный или сильный мокрый снег`; 
+          break;
         case 'Patchy light snow': 
-        weather = `Небольшой мелкий снег`; 
-        break;
-
+          weather = `Небольшой мелкий снег`; 
+          break;
         case 'Light snow': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
-
-        case '-----Light snow-----': 
-        weather = `Легкий снег`; 
-        break;
+          weather = `Легкий снег`; 
+          break;
+        case 'Patchy moderate snow': 
+          weather = `Неровный умеренный снег`; 
+          break;
+        case 'Moderate snow': 
+          weather = `Умеренный снег`; 
+          break;
+        case 'Patchy heavy snow': 
+          weather = `Неровный сильный снег`; 
+          break;
+        case 'Heavy snow': 
+          weather = `Сильный снегопад`; 
+          break;
+        case 'Ice pellets': 
+          weather = `Ледяная крупа`; 
+          break;
+        case 'Light rain shower': 
+          weather = `Небольшой моросящий дождь`; 
+          break;
+        case 'Moderate or heavy rain shower': 
+          weather = `Умеренный или сильный ливень`; 
+          break;
+        case 'Torrential rain shower': 
+          weather = `Проливной ливень`; 
+          break;
+        case 'Light sleet showers': 
+          weather = `Небольшой ливень с мокрым снегом`; 
+          break;
+        case 'Moderate or heavy sleet showers': 
+          weather = `Умеренный или сильный ливень с мокрым снегом`; 
+          break;
+        case 'Light snow showers': 
+          weather = `Легкий снегопад`; 
+          break;
+        case 'Moderate or heavy snow showers': 
+          weather = `Умеренный или сильный снегопад`; 
+          break;
+        case 'Light showers of ice pellets': 
+          weather = `Легкий дождь ледяных крупинок`; 
+          break;
+        case 'Moderate or heavy showers of ice pellets': 
+          weather = `Умеренные или сильные ливни ледяной крупы`; 
+          break;
+        case 'Patchy light rain with thunder': 
+          weather = `Небольшой дождь с грозой`; 
+          break;
+        case 'Moderate or heavy rain with thunder': 
+          weather = `Умеренный или сильный дождь с грозой`; 
+          break;
+        case 'Patchy light snow with thunder': 
+          weather = `Небольшой снег с грозой`; 
+          break;
+        case 'Moderate or heavy snow with thunder': 
+          weather = `Умеренный или сильный дождь с грозой`; 
+          break;
       }
-
-      
       return weather;
 }
+
+//иконки погоды
+const indicatorsWeatherImg = document.querySelector('.indicators__weather-img');
+const WeatherImg = result.current.condition.icon.slice(-7, -4); // номер изображения
+const WeatherImgDay = result.current.condition.icon.slice(35, -8); //день или ночь
+
+indicatorsWeatherImg.style.background = (WeatherImgDay === 'day') ? `url(../img/weather/day/${WeatherImg}.png) no-repeat center` 
+: `url(../img/weather/night/${WeatherImg}.png) no-repeat center`;
 
 //{"location":{"name":"Togliatti","region":"Samara","country":"Russia","lat":53.52,"lon":49.41,"tz_id":"Europe/Samara","localtime_epoch":1705464317,"localtime":"2024-01-17 8:05"},"current":{"last_updated_epoch":1705464000,"last_updated":"2024-01-17 08:00","temp_c":-3.7,"temp_f":25.3,"is_day":0,"condition":{"text":"Blizzard","icon":"//cdn.weatherapi.com/weather/64x64/night/230.png","code":1117},"wind_mph":22.8,"wind_kph":36.7,"wind_degree":187,"wind_dir":"S","pressure_mb":1005,"pressure_in":29.66,"precip_mm":0.27,"precip_in":0.01,"humidity":93,"cloud":100,"feelslike_c":-12.1,"feelslike_f":10.2,"vis_km":0,"vis_miles":0,"uv":1,"gust_mph":35.1,"gust_kph":56.4}}
   
