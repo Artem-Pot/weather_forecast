@@ -1,63 +1,23 @@
-let url = 'http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=Togliatti&aqi=no';
-const response = await fetch(url);
-const result = await response.json();
-
 //поиск по городу
-let formSearch = document.querySelector('#form__search').value; //поле ввода
+let formSearch = document.querySelector('#form__search'); //поле ввода
 const formButton = document.querySelector('#form__button'); //кнопка поиска
+//переменные json запроса
+let url = '';
+let response;
+let result;
 
 formButton.onclick = function() {
   url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=${formSearch.value}&aqi=no`;
-  dateCity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.location.name).slice(1,-1)).toUpperCase()}`);
-  console.log(result.location.name);
+  start();
 }
 
-
-
-
-
-
-//-------------- Блок текущая дата-----------------------
+async function start() {
+  response = await fetch(url);
+  result = await response.json();
 //город
-const dateCity = document.querySelector('.date__city');
-// dateCity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.location.name).slice(1,-1)).toUpperCase()}`);
+  let dateCity = document.querySelector('.date__city');
+  dateCity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.location.name).slice(1,-1)).toUpperCase()}`);
 
-//день недели
-const newDate = new Date();
-
-const days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
-const dateWeekDay  = document.querySelector('.date__week-day');
-dateWeekDay.insertAdjacentHTML('beforebegin',`${days[newDate.getDay()]}`);
-
-//текущий день месяца
-const dateDay  = document.querySelector('.date__day');
-dateDay.insertAdjacentHTML('beforebegin',`${newDate.getDate()}`);
-
-//месяц
-const month =['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
-const dateMonth  = document.querySelector('.date__month');
-dateMonth.insertAdjacentHTML('beforebegin',`${month[newDate.getMonth()]}`);
-
-//текущее время
-function checkTime(i) {
-    if (i < 10) {
-      i = "0" + i;
-    }
-    return i;
-  }
-  function startTime() {
-    var today = new Date();
-    var h = today.getHours();
-    var m = today.getMinutes();
-    m = checkTime(m);
-    document.querySelector('.date__time').innerHTML = h + ":" + m;
-    setTimeout(function() {
-      startTime()
-    }, 500);
-  }
-  startTime();
-
-//----- Блок индикаторы 
 //температура
 const indicatorsTemperature  = document.querySelector('.indicators__temperature');
 indicatorsTemperature.insertAdjacentHTML('beforebegin',`${Math.round((JSON.stringify(result.current.temp_c)))}`);
@@ -299,6 +259,53 @@ const WeatherImgDay = result.current.condition.icon.slice(35, -8); //день и
 
 indicatorsWeatherImg.style.background = (WeatherImgDay === 'day') ? `url(../img/weather/day/${WeatherImg}.png) no-repeat center` 
 : `url(../img/weather/night/${WeatherImg}.png) no-repeat center`;
+
+
+}
+
+//-------------- Блок текущая дата-----------------------
+//город
+// const dateCity = document.querySelector('.date__city');
+// dateCity.insertAdjacentHTML('beforebegin',`${(JSON.stringify(result.location.name).slice(1,-1)).toUpperCase()}`);
+
+//день недели
+const newDate = new Date();
+
+const days =["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"];
+const dateWeekDay  = document.querySelector('.date__week-day');
+dateWeekDay.insertAdjacentHTML('beforebegin',`${days[newDate.getDay()]}`);
+
+//текущий день месяца
+const dateDay  = document.querySelector('.date__day');
+dateDay.insertAdjacentHTML('beforebegin',`${newDate.getDate()}`);
+
+//месяц
+const month =['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
+const dateMonth  = document.querySelector('.date__month');
+dateMonth.insertAdjacentHTML('beforebegin',`${month[newDate.getMonth()]}`);
+
+//текущее время
+function checkTime(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+  function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    m = checkTime(m);
+    document.querySelector('.date__time').innerHTML = h + ":" + m;
+    setTimeout(function() {
+      startTime()
+    }, 500);
+  }
+  startTime();
+
+//----- Блок индикаторы 
+
+
 
 //{"location":{"name":"Togliatti","region":"Samara","country":"Russia","lat":53.52,"lon":49.41,"tz_id":"Europe/Samara","localtime_epoch":1705464317,"localtime":"2024-01-17 8:05"},"current":{"last_updated_epoch":1705464000,"last_updated":"2024-01-17 08:00","temp_c":-3.7,"temp_f":25.3,"is_day":0,"condition":{"text":"Blizzard","icon":"//cdn.weatherapi.com/weather/64x64/night/230.png","code":1117},"wind_mph":22.8,"wind_kph":36.7,"wind_degree":187,"wind_dir":"S","pressure_mb":1005,"pressure_in":29.66,"precip_mm":0.27,"precip_in":0.01,"humidity":93,"cloud":100,"feelslike_c":-12.1,"feelslike_f":10.2,"vis_km":0,"vis_miles":0,"uv":1,"gust_mph":35.1,"gust_kph":56.4}}
   
