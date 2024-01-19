@@ -1,4 +1,4 @@
-import { result } from "./url.js";
+import { result } from "../scripts.js";
 
 //город
 function cityFun() {

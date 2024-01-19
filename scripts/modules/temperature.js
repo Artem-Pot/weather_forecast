@@ -1,4 +1,4 @@
-import { result } from "./url.js";
+import { result } from "../scripts.js";
 
 const indicatorsTemperature  = document.querySelector('.indicators__temperature');     //температура
 const indicatorsFeeling  = document.querySelector('.indicators__feeling');     //температура ощущается как

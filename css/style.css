@@ -272,7 +272,6 @@ body {
 }
 
 .indicators__weather-img {
-  background: url(../img/sun.svg) no-repeat center;
   width: 80px;
   height: 80px;
   background-size: 80px 80px;
