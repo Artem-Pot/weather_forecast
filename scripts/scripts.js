@@ -6,24 +6,6 @@ import { pressureFun } from "./modules/pressure.js"; //давление
 import { weatherFun } from "./modules/weather.js"; //погода
 import { startTime, startDate } from "./modules/date.js"; //дата и время
 
-//проба запускать при загрузке страницы инфу по Москве
-// function test() {
-//   // let url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=Москва&aqi=no&lang=ru`;
-//   let url = ``;
-//   let response;
-//   let result;
-//   async function requestJson2() {
-//     url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=Москва&aqi=no&lang=ru`;
-//     response = await fetch(url);
-//     result = await response.json();
-//   }
-
-//   requestJson2();
-//   setTimeout(start, 400);
-// }
-
-// test();
-
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
 const formButton = document.querySelector('#form__button'); //кнопка поиска
@@ -31,6 +13,14 @@ const formButton = document.querySelector('#form__button'); //кнопка по�
 let url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=Москва&aqi=no&lang=ru`;
 let response;
 let result;
+
+//запуск при загрузке страницы
+function loading() {
+  requestJson();
+  setTimeout(start, 400);
+}
+
+loading();
 
 async function requestJson() {
   response = await fetch(url);
