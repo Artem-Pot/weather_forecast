@@ -3,12 +3,12 @@ import { result } from "../scripts.js";
 //ветер
 function windFun(){
     const indicatorsWind = document.querySelector('.indicators__wind-indicator');
-    indicatorsWind.insertAdjacentHTML('beforebegin',`${Math.round(JSON.stringify(result.current.wind_kph) * 0.27777777778)}`);
+    indicatorsWind.textContent = Math.round(JSON.stringify(result.current.wind_kph) * 0.27777777778);
   
   //направление ветра
   const directionWind = document.querySelector('.indicators__directionWind-indicator');
   const direction = '';
-  directionWind.insertAdjacentHTML('beforebegin',`${directionWindFunc()}`);
+  directionWind.textContent = directionWindFunc();
   
   function directionWindFunc(direction) {
       switch(result.current.wind_dir) {

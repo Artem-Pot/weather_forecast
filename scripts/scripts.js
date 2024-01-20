@@ -14,7 +14,7 @@ let url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a1157
 let response;
 let result;
 
-//запуск при загрузке страницы
+//запуск при загрузке страницы базовых показателей г.Москва
 function loading() {
   requestJson();
   setTimeout(start, 400);
@@ -32,7 +32,6 @@ formButton.onclick = function() {
   url = `http://api.weatherapi.com/v1/current.json?key=75b9c736df53403297a115728241601%20&q=${formSearch.value}&aqi=no&lang=ru`;
   requestJson();
   setTimeout(start, 400);
-  console.log(url);
 }
 
 //функция запуска после поиска по городу
@@ -48,12 +47,11 @@ function start() {
 
 export { result };
 
-//добавить чтобы автоматически загружалась погода по Москве 
 //ключ api перенести в отдельный модуль
 //добавить время восход и заход солнца
 //добавить порыв ветра
-//убрать баг при повторном нажатии на кнопку поиска. Происходит добавление параметров
 //добавить историю на 5 дней вперёд
+//стилизовать 
 
 //pug -w pug/index.pug -o ./ -P
 

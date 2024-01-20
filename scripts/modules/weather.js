@@ -2,8 +2,8 @@ import { result } from "../scripts.js";
 
 // состояние погоды
 function weatherFun() {
-    const indicatorsWeather = document.querySelector('.indicators__weather-title');
-    indicatorsWeather.insertAdjacentHTML('beforebegin',`${result.current.condition.text}`);
+  const indicatorsWeather = document.querySelector('.indicators__weather-title');
+  indicatorsWeather.textContent = result.current.condition.text;
     
   //иконки погоды
   const indicatorsWeatherImg = document.querySelector('.indicators__weather-img');
