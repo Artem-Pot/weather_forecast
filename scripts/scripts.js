@@ -1,4 +1,4 @@
-import { temperatureFun } from "./modules/temperature; //температура
+import { temperatureFun } from "./modules/temperature"; //температура
 import { cityFun } from "./modules/city.js"; //город
 import { windFun } from "./modules/wind.js"; //ветер
 import { humidityFun } from "./modules/humidity.js"; //влажность
