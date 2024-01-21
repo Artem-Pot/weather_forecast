@@ -1,16 +1,12 @@
-import { temperatureFun } from "../scripts/modules/temperature.js"; //температура
-import { cityFun } from "../scripts/modules/city.js"; //город
-import { windFun } from "../scripts/modules/wind.js"; //ветер
-import { humidityFun } from "../scripts/modules/humidity.js"; //влажность
-import { pressureFun } from "../scripts/modules/pressure.js"; //давление
-import { weatherFun } from "../scripts/modules/weather.js"; //погода
-import { startTime, startDate } from "../scripts/modules/date.js"; //дата и время
-import { lengthDayFun } from "../scripts/modules/length-day.js"; //восход и заход солнца
-import { keyApi } from "../scripts/modules/keyApi.js"; //ключ api
-
-// ./key.js"
-// ../scripts/key.js"
-//../scripts/modules/key.js
+import { temperatureFun } from "/scripts/modules/temperature.js"; //температура
+import { cityFun } from "/scripts/modules/city.js"; //город
+import { windFun } from "/scripts/modules/wind.js"; //ветер
+import { humidityFun } from "/scripts/modules/humidity.js"; //влажность
+import { pressureFun } from "/scripts/modules/pressure.js"; //давление
+import { weatherFun } from "/scripts/modules/weather.js"; //погода
+import { startTime, startDate } from "/scripts/modules/date.js"; //дата и время
+import { lengthDayFun } from "/scripts/modules/length-day.js"; //восход и заход солнца
+import { keyApi } from "/scripts/modules/keyApi.js"; //ключ api
 
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
