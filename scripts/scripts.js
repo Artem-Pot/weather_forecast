@@ -6,13 +6,13 @@ import { pressureFun } from "./modules/pressure.js"; //давление
 import { weatherFun } from "./modules/weather.js"; //погода
 import { startTime, startDate } from "./modules/date.js"; //дата и время
 import { lengthDayFun } from "./modules/length-day.js"; //восход и заход солнца
-
+import { API_KEY } from "./key.js"; //восход и заход солнца
 
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
 const formButton = document.querySelector('#form__button'); //кнопка поиска
 
-let url = `http://api.weatherapi.com/v1/forecast.json?key=75b9c736df53403297a115728241601&q=Москва&days=1&aqi=no&alerts=no&lang=ru`;
+let url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Москва&days=1&aqi=no&alerts=no&lang=ru`;
 let response;
 let result;
 
@@ -31,7 +31,7 @@ async function requestJson() {
 
 //функция поиска по городу
 formButton.onclick = function() {
-  url = `http://api.weatherapi.com/v1/forecast.json?key=75b9c736df53403297a115728241601&q=${formSearch.value}&days=1&aqi=no&alerts=no&lang=ru`;
+  url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${formSearch.value}&days=1&aqi=no&alerts=no&lang=ru`;
   requestJson();
   setTimeout(start, 400);
 }
@@ -45,16 +45,9 @@ function start() {
   windFun();
   weatherFun();
   lengthDayFun();
-  //console.log(JSON.stringify(result));
-  // console.log(JSON.stringify((result.forecast.forecastday[0].astro.sunrise)).slice(1,-4));
 }
 
 export { result };
-
-
-
-//время восхода и захода в 24 формате часов
-//ключ api перенести в отдельный модуль
 
 //добавить порыв ветра
 //добавить историю на 5 дней вперёд
