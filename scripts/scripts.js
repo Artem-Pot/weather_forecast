@@ -10,6 +10,7 @@ import { API_KEY } from "../scripts/modules/key.js"; //ключ api
 
 // ./key.js"
 // ../scripts/key.js"
+//../scripts/modules/key.js
 
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
