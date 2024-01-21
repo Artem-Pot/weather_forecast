@@ -6,25 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/style.css" rel="stylesheet">
     <link rel="icon" href="img/ico.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
     <title>Прогноз погоды</title>
   </head>
   <body>
     <main>
       <section class="container">
         <form class="form">
-          <input class="form__search" id="form__search" type="text" placeholder="Введи название города" value="Москва">
+          <input class="form__search" id="form__search" type="text" placeholder="Введи название города">
           <button class="form__button" id="form__button" type="button">Найти</button>
         </form>
         <div class="box__indicators">
           <div class="date">
-            <div class="date__box-city"><span class="date__city_name">Город: </span><span class="date__city"></span></div>
-            <div class="date__box-time"><span class="date__title">Текущее время: </span><span class="date__time"></span></div>
-            <div class="date__box-date"><span class="date__week-day"></span><span class="date__day"></span><span class="date__month"></span></div>
+            <div class="date__box-city"><span class="date__city_name">Город: </span><span class="date__city"> </span></div>
+            <div class="date__box-time"><span class="date__title">Текущее время: </span><span class="date__time"> </span></div>
+            <div class="date__box-date"><span class="date__week-day"> </span><span class="date__day"> </span><span class="date__month"> </span></div>
           </div>
           <div class="indicators">
             <div class="indicators__box">
               <div class="indicators__block">
-                <div class="indicators__box-temperature"><span class="indicators__text-temperature">Температура: </span><span class="indicators__temperature">°С</span></div>
+                <div class="indicators__box-temperature"><span class="indicators__text-temperature">Температура °С: </span><span class="indicators__temperature"></span></div>
                 <div class="indicators__box-feeling"><span class="indicators__text-feeling">Ощущается как: </span><span class="indicators__feeling">°С</span></div>
               </div>
               <div class="indicators__sunrise"><span class="indicators__sunrise-title">Восход</span><span class="indicators__sunrise-time"></span></div>
