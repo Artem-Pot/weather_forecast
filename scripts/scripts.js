@@ -6,7 +6,7 @@ import { pressureFun } from "../scripts/modules/pressure.js"; //давление
 import { weatherFun } from "../scripts/modules/weather.js"; //погода
 import { startTime, startDate } from "../scripts/modules/date.js"; //дата и время
 import { lengthDayFun } from "../scripts/modules/length-day.js"; //восход и заход солнца
-import { API_KEY } from "./key.js"; //восход и заход солнца
+import { API_KEY } from "../scripts/key.js"; //восход и заход солнца
 
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
