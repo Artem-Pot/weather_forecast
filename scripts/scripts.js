@@ -1,12 +1,12 @@
-import { temperatureFun } from "/scripts/modules/temperature.js"; //температура
-import { cityFun } from "/scripts/modules/city.js"; //город
-import { windFun } from "/scripts/modules/wind.js"; //ветер
-import { humidityFun } from "/scripts/modules/humidity.js"; //влажность
-import { pressureFun } from "/scripts/modules/pressure.js"; //давление
-import { weatherFun } from "/scripts/modules/weather.js"; //погода
-import { startTime, startDate } from "/scripts/modules/date.js"; //дата и время
-import { lengthDayFun } from "/scripts/modules/length-day.js"; //восход и заход солнца
-import { API_KEY } from "/scripts/key.js"; //восход и заход солнца
+import { temperatureFun } from "./modules/temperature; //температура
+import { cityFun } from "./modules/city.js"; //город
+import { windFun } from "./modules/wind.js"; //ветер
+import { humidityFun } from "./modules/humidity.js"; //влажность
+import { pressureFun } from "./modules/pressure.js"; //давление
+import { weatherFun } from "./modules/weather.js"; //погода
+import { startTime, startDate } from "./modules/date.js"; //дата и время
+import { lengthDayFun } from "./modules/length-day.js"; //восход и заход солнца
+import { API_KEY } from "./key.js"; //восход и заход солнца
 
 //поиск по городу
 const formSearch = document.querySelector('#form__search'); //поле ввода
