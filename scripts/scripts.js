@@ -6,7 +6,7 @@ import { pressureFun } from "../scripts/modules/pressure.js"; //давление
 import { weatherFun } from "../scripts/modules/weather.js"; //погода
 import { startTime, startDate } from "../scripts/modules/date.js"; //дата и время
 import { lengthDayFun } from "../scripts/modules/length-day.js"; //восход и заход солнца
-import { API_KEY } from "../scripts/modules/key.js"; //ключ api
+import { keyApi } from "../scripts/modules/key.js"; //ключ api
 
 // ./key.js"
 // ../scripts/key.js"
@@ -16,7 +16,7 @@ import { API_KEY } from "../scripts/modules/key.js"; //ключ api
 const formSearch = document.querySelector('#form__search'); //поле ввода
 const formButton = document.querySelector('#form__button'); //кнопка поиска
 
-let url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=Москва&days=1&aqi=no&alerts=no&lang=ru`;
+let url = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=Москва&days=1&aqi=no&alerts=no&lang=ru`;
 let response;
 let result;
 
@@ -35,7 +35,7 @@ async function requestJson() {
 
 //функция поиска по городу
 formButton.onclick = function() {
-  url = `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${formSearch.value}&days=1&aqi=no&alerts=no&lang=ru`;
+  url = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=${formSearch.value}&days=1&aqi=no&alerts=no&lang=ru`;
   requestJson();
   setTimeout(start, 400);
 }
