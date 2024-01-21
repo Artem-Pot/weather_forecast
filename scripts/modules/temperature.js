@@ -1,4 +1,4 @@
-import { result } from "scripts/scripts.js";
+import { result } from "../scripts.js";
 
 //температура и ощущается как 
 function temperatureFun() {
