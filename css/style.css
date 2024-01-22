@@ -321,6 +321,10 @@ body {
   left: 5px;
 }
 
+.indicators__sunrise-time {
+  font-size: 18px;
+}
+
 .indicators__sunset {
   position: relative;
   display: -webkit-box;
@@ -343,6 +347,10 @@ body {
   left: 2px;
 }
 
+.indicators__sunset-time {
+  font-size: 18px;
+}
+
 .indicators__box-weather {
   gap: 30px;
 }
@@ -356,8 +364,10 @@ body {
 }
 
 .indicators__weather-title {
-  font-size: 15px;
   text-align: center;
+  text-align: center;
+  font-size: 18px;
+  overflow-wrap: break-word;
 }
 
 .indicators__box-humpres {
@@ -379,17 +389,23 @@ body {
   gap: 10px;
 }
 
-img {
-  border: none;
-}
-
 .indicators__humidity-img {
-  background-size: 50px;
-  border: none;
+  width: 40px;
+  height: 40px;
 }
 
 .indicators__pressure-img {
-  background-size: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.indicators__humidity-indicator,
+.indicators__pressure-indicator {
+  font-size: 18px;
+}
+
+.indicators__box-wind {
+  gap: 20px;
 }
 
 .indicators__wind {
@@ -403,13 +419,22 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
 }
 
 .indicators__wind-img {
-  background-size: 50px;
+  width: 40px;
+  height: 40px;
 }
 
-.indicators__ultraviolet {
+.indicators__wind-indicator {
+  font-size: 18px;
+}
+
+.indicators__directionWind {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -420,6 +445,13 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 20px;
+}
+
+.indicators__directionWind-indicator {
+  text-align: center;
+  font-size: 18px;
+  overflow-wrap: break-word;
 }
 
 .week {

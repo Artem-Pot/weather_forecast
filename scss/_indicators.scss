@@ -74,7 +74,7 @@
 }
 
 .indicators__sunrise-time {
-  
+  font-size: 18px;
 }
 
 .indicators__sunset {
@@ -101,7 +101,7 @@
 }
 
 .indicators__sunset-time {
-  
+  font-size: 18px;
 }
 
 .indicators__box-weather {
@@ -115,8 +115,10 @@
 }
 
 .indicators__weather-title {
-  font-size: 15px;
   text-align: center;
+  text-align: center;
+  font-size: 18px;
+  overflow-wrap: break-word;
 }
 
 .indicators__box-humpres {
@@ -131,23 +133,19 @@
   gap: 10px;
 }
 
-img {
-  border: none;
-
-}
-
 .indicators__humidity-img {
-  background-size: 50px;
-  border: none;
+  width: 40px;
+  height: 40px;
 }
 
 .indicators__pressure-img {
-  background-size: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .indicators__humidity-indicator,
 .indicators__pressure-indicator {
-
+  font-size: 18px;
 }
 
 .indicators__humidity-title,
@@ -155,38 +153,40 @@ img {
 
 }
 
+.indicators__box-wind {
+  gap: 20px;
+}
+
 .indicators__wind {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .indicators__wind-img {
-  background-size: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 .indicators__wind-indicator {
-
+  font-size: 18px;
 }
 
 .indicators__wind-title {
-
+  
 }
 
-.indicators__ultraviolet {
+.indicators__directionWind {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
-.indicators__ultraviolet-img {
-
-}
-
-.indicators__ultraviolet-indicator {
-
-}
-
-.indicators__ultraviolet-title {
-
+.indicators__directionWind-indicator {
+  text-align: center;
+  font-size: 18px;
+  overflow-wrap: break-word;
 }
