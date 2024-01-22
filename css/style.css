@@ -164,6 +164,7 @@ body {
           justify-content: center;
   gap: 40px;
   border-bottom-left-radius: 10px;
+  padding: 10px;
 }
 
 .date__box-city {
@@ -215,6 +216,7 @@ body {
   gap: 10px;
   background-color: antiquewhite;
   border-bottom-right-radius: 10px;
+  padding: 10px;
 }
 
 .indicators__box {
