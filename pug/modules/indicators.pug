@@ -1,0 +1,36 @@
+.indicators
+    .indicators__box
+        .indicators__block
+            .indicators__box-temperature
+                span.indicators__temperature
+                span.indicators__text-temperature °С
+            .indicators__box-feeling
+                span.indicators__text-feeling Ощущается как: 
+                span.indicators__feeling °С
+        .indicators__sunrise
+            span.indicators__sunrise-title Восход
+            span.indicators__sunrise-time
+        .indicators__sunset
+            span.indicators__sunset-title Закат
+            span.indicators__sunset-time
+    .indicators__box.indicators__box-weather
+        span.indicators__weather-img
+        span.indicators__weather-title
+    .indicators__box.indicators__box-humpres
+        .indicators__humidity
+            img(class="indicators__humidity-img" src="img/humidity.svg")
+            span.indicators__humidity-indicator 
+            span.indicators__humidity-title Влажность, %
+        .indicators__pressure
+            img(class="indicators__pressure-img" src="img/pressure.svg")
+            span.indicators__pressure-indicator
+            span.indicators__pressure-title Давление, мм / рс
+    .indicators__box
+        .indicators__wind
+            img(class="indicators__wind-img" src="img/wind.svg")
+            span.indicators__wind-indicator м/с
+            span.indicators__wind-title Ветер
+        .indicators__ultraviolet
+            img.indicators__directionWind-img
+            span.indicators__directionWind-indicator
+            span.indicators__directionWind-title Направление
