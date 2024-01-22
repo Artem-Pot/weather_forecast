@@ -1,12 +1,13 @@
 //---------блок с показателями погоды
 .indicators {
-    width: 600px;
+    width: 650px;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     background-color:antiquewhite;
+    border-bottom-right-radius: 10px;
 }
 
 .indicators__box {
@@ -57,6 +58,7 @@
   gap: 5px;
   padding-left: 35px;
   height: 40px;
+  margin-top: 20px;
 
   &::before {
     content: '';
@@ -117,7 +119,7 @@
 .indicators__weather-title {
   text-align: center;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px;
   overflow-wrap: break-word;
 }
 
