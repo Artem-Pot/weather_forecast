@@ -24,17 +24,33 @@ function loading() {
 
 loading();
 
+
 async function requestJson() {
   response = await fetch(url);
-  result = await response.json();
+  if (response.ok) { //проверка на ошибки запроса
+    result = await response.json();
+  } else {
+    formSearch.style.border = "2px solid red";
+    formSearch.value = '';
+    formSearch.placeholder = 'Введи корректный запрос';
+  }
 }
 
-//функция поиска по городу
+//функция поиска по городу с помощью мыши
 formButton.onclick = function() {
   url = `http://api.weatherapi.com/v1/forecast.json?key=${keyApi}&q=${formSearch.value}&days=1&aqi=no&alerts=no&lang=ru`;
   requestJson();
   setTimeout(start, 400);
+  formSearch.style.border = 'none'; //очистка рамки от красного цвета если была ошибка ранее
 }
+
+//поиск по нажатию на enter
+formSearch.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    formButton.click();
+  }
+});
 
 //функция запуска после поиска по городу
 function start() {
@@ -50,8 +66,6 @@ function start() {
 export { result };
 
 //на гит хаб относительные пути модулей работают не так
-//добавить поиск по нажатию на enter
-//сделать обработчик ошибок (вывод сообщения и красный цвет окна ввода), иначе если неправильный город вылетает ошибка и требуется обновление страницы
 //добавить адаптив
 //добавить автообновление данных каждые 5 минут
 //pug -w pug/index.pug -o ./ -P
