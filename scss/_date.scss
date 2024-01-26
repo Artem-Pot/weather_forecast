@@ -1,15 +1,26 @@
 //--------------текущая дата
 .date {
     background-color: rgb(168, 168, 197);
-    width: 250px;
     height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 250px;
     justify-content: center;
     gap: 40px;
     border-bottom-left-radius: 10px;
     padding: 10px;
+    text-align: center;
+    @media (min-width: 320px) and (max-width: 900px) {
+      flex: 1 1 150px;
+    }
+    @media (max-width: 674px) {
+      flex-direction: row;
+      flex: 1 1 auto;
+      max-height: 50px;
+      width: 100%;
+      border-bottom-left-radius: 0px;
+    }
   }
   
   .date__box-city {
@@ -22,6 +33,9 @@
 .date__city {
   font-size: 20px;
   font-weight: 600;
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 14px;
+  }
 }
 
   .date__box-time {

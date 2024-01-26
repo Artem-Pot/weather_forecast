@@ -24,13 +24,12 @@ function loading() {
 
 loading();
 
-
 async function requestJson() {
   response = await fetch(url);
   if (response.ok) { //проверка на ошибки запроса
     result = await response.json();
   } else {
-    formSearch.style.border = "2px solid red";
+    formSearch.style.border = "3px solid red";
     formSearch.value = '';
     formSearch.placeholder = 'Введи корректный запрос';
   }
@@ -42,6 +41,7 @@ formButton.onclick = function() {
   requestJson();
   setTimeout(start, 400);
   formSearch.style.border = 'none'; //очистка рамки от красного цвета если была ошибка ранее
+  console.clear(); //очистка консоли от ошибок
 }
 
 //поиск по нажатию на enter

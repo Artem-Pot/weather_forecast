@@ -9,21 +9,27 @@ body {
     font-weight: 500;
 }
 
+main {
+
+}
+
 .container {
-  width: 100%;
-  width: 100%;
-  background-color: chartreuse;
   border-radius: 20px;
+  max-width: 900px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .form {
   background-color: rgb(148, 147, 146);
   max-width: 900px;
-  width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100vw;
   gap: 10px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
@@ -46,12 +52,17 @@ body {
 }
 
 .box__indicators {
-  width: 900px;
+  max-width: 900px;
+  width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  @media (max-width: 674px) {
+    flex-direction: column;
+    max-height: 400px;
+  }
 }
 
 @import './date.scss';

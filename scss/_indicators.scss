@@ -1,14 +1,19 @@
 //---------блок с показателями погоды
 .indicators {
-    width: 650px;
     height: 300px;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1 1 650px;
     gap: 10px;
     background-color:antiquewhite;
     border-bottom-right-radius: 10px;
     padding: 10px;
+    text-align: center;
+    @media (max-width: 674px) {
+      border-bottom-left-radius: 10px;
+      width: 100vw;
+    }
 }
 
 .indicators__box {
@@ -19,7 +24,6 @@
   width: 25%;
   gap: 5px;
   padding: 10px 0;
-  height: 100%;
 }
 
 .indicators__block {
@@ -37,6 +41,9 @@
     gap: 5px;
     font-size: 26px;
     font-weight: 600;
+    @media (min-width: 320px) and (max-width: 900px) {
+      font-size: 20px;
+    }
 }
 
 .indicators__box-feeling {
@@ -76,8 +83,12 @@
   
 }
 
-.indicators__sunrise-time {
+.indicators__sunrise-time,
+.indicators__sunset-time {
   font-size: 18px;
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 14px;
+  }
 }
 
 .indicators__sunset {
@@ -103,10 +114,6 @@
   
 }
 
-.indicators__sunset-time {
-  font-size: 18px;
-}
-
 .indicators__box-weather {
   gap: 30px;
 }
@@ -114,7 +121,11 @@
 .indicators__weather-img {
   width: 80px;
   height: 80px;
+  padding: 5px;
   transform: scale(2);
+  @media (min-width: 320px) and (max-width: 900px) {
+    transform: scale(1.5);
+  }
 }
 
 .indicators__weather-title {
@@ -122,6 +133,9 @@
   text-align: center;
   font-size: 14px;
   overflow-wrap: break-word;
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 12px;
+  }
 }
 
 .indicators__box-humpres {
@@ -136,24 +150,22 @@
   gap: 10px;
 }
 
-.indicators__humidity-img {
-  width: 40px;
-  height: 40px;
-}
-
+.indicators__humidity-img,
 .indicators__pressure-img {
   width: 40px;
   height: 40px;
+  @media (min-width: 320px) and (max-width: 900px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .indicators__humidity-indicator,
 .indicators__pressure-indicator {
   font-size: 18px;
-}
-
-.indicators__humidity-title,
-.indicators__pressure-title {
-
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 14px;
+  }
 }
 
 .indicators__box-wind {
@@ -171,14 +183,17 @@
 .indicators__wind-img {
   width: 40px;
   height: 40px;
+  @media (min-width: 320px) and (max-width: 900px) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .indicators__wind-indicator {
   font-size: 18px;
-}
-
-.indicators__wind-title {
-  
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 14px;
+  }
 }
 
 .indicators__directionWind {
@@ -192,4 +207,7 @@
   text-align: center;
   font-size: 18px;
   overflow-wrap: break-word;
+  @media (min-width: 320px) and (max-width: 900px) {
+    font-size: 14px;
+  }
 }
