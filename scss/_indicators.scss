@@ -1,18 +1,20 @@
 //---------блок с показателями погоды
 .indicators {
     height: 300px;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 650px;
+    flex: 1 1 auto;
     gap: 10px;
     background-color:antiquewhite;
     border-bottom-right-radius: 10px;
     padding: 10px;
     text-align: center;
-    @media (max-width: 674px) {
+
+    @media (max-width: 559px) {
       border-bottom-left-radius: 10px;
-      width: 100vw;
+      flex-wrap: wrap;
     }
 }
 
@@ -24,6 +26,12 @@
   width: 25%;
   gap: 5px;
   padding: 10px 0;
+
+  @media (max-width: 559px) {
+    width: 48%;
+    border: 1px solid #ccc;
+    height: 130px;
+  }
 }
 
 .indicators__block {
@@ -31,6 +39,9 @@
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  @media (max-width: 559px) {
+    gap: 5px; 
+  }
 }
 
 .indicators__box-temperature {
@@ -41,7 +52,8 @@
     gap: 5px;
     font-size: 26px;
     font-weight: 600;
-    @media (min-width: 320px) and (max-width: 900px) {
+
+    @media (max-width: 900px) {
       font-size: 20px;
     }
 }
@@ -67,6 +79,10 @@
   padding-left: 35px;
   height: 40px;
   margin-top: 20px;
+  @media (max-width: 559px) {
+    height: auto; 
+    padding-left: 0;
+  }
 
   &::before {
     content: '';
@@ -76,17 +92,18 @@
     background-size: 24px;
     position: absolute;
     left: 5px;
+    
+    @media (max-width: 559px) {
+      display: none;
+    }
   }
-}
-
-.indicators__sunrise-title {
-  
 }
 
 .indicators__sunrise-time,
 .indicators__sunset-time {
   font-size: 18px;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     font-size: 14px;
   }
 }
@@ -98,6 +115,10 @@
   gap: 5px;
   padding-left: 35px;
   height: 40px;
+  @media (max-width: 559px) {
+    height: auto; 
+    padding-left: 0;
+  }
 
   &::before {
     content: '';
@@ -107,15 +128,17 @@
     background-size: 24px;
     position: absolute;
     left: 2px;
+    @media (max-width: 559px) {
+      display: none;
+    }
   }
-}
-
-.indicators__sunset-title {
-  
 }
 
 .indicators__box-weather {
   gap: 30px;
+  @media (max-width: 559px) {
+    gap: 5px; 
+  }
 }
 
 .indicators__weather-img {
@@ -123,7 +146,8 @@
   height: 80px;
   padding: 5px;
   transform: scale(2);
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     transform: scale(1.5);
   }
 }
@@ -133,7 +157,8 @@
   text-align: center;
   font-size: 14px;
   overflow-wrap: break-word;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     font-size: 12px;
   }
 }
@@ -154,22 +179,31 @@
 .indicators__pressure-img {
   width: 40px;
   height: 40px;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (min-width: 560px) and (max-width: 900px) {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: 559px) {
+    display: none;
   }
 }
 
 .indicators__humidity-indicator,
 .indicators__pressure-indicator {
   font-size: 18px;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     font-size: 14px;
   }
 }
 
 .indicators__box-wind {
   gap: 20px;
+  @media (max-width: 559px) {
+    gap: 5px;
+  }
 }
 
 .indicators__wind {
@@ -178,20 +212,29 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  @media (max-width: 559px) {
+    gap: 5px;
+  }
 }
 
 .indicators__wind-img {
   width: 40px;
   height: 40px;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (min-width: 560px) and (max-width: 900px) {
     width: 30px;
     height: 30px;
+  }
+
+  @media (max-width: 559px) {
+    display: none;
   }
 }
 
 .indicators__wind-indicator {
   font-size: 18px;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     font-size: 14px;
   }
 }
@@ -207,7 +250,11 @@
   text-align: center;
   font-size: 18px;
   overflow-wrap: break-word;
-  @media (min-width: 320px) and (max-width: 900px) {
+
+  @media (max-width: 900px) {
     font-size: 14px;
+  }
+  @media (max-width: 559px) {
+    gap: 5px;
   }
 }

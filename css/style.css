@@ -120,12 +120,19 @@ body {
   gap: 10px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  padding: 10px;
 }
 
 .form__search {
   padding: 5px 10px;
   border-radius: 3px;
   width: 300px;
+}
+@media (max-width: 559px) {
+  .form__search {
+    max-width: 250px;
+    width: 100%;
+  }
 }
 
 .form__button {
@@ -177,23 +184,16 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 250px;
-          flex: 1 1 250px;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 250px;
+          flex: 1 1 250px;
   gap: 40px;
   border-bottom-left-radius: 10px;
   padding: 10px;
   text-align: center;
-}
-@media (min-width: 320px) and (max-width: 900px) {
-  .date {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 150px;
-            flex: 1 1 150px;
-  }
 }
 @media (max-width: 674px) {
   .date {
@@ -226,7 +226,7 @@ body {
   font-size: 20px;
   font-weight: 600;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .date__city {
     font-size: 14px;
   }
@@ -237,6 +237,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 10px;
+}
+@media (max-width: 559px) {
+  .date__box-time {
+    display: none;
+  }
 }
 
 .date__box-date {
@@ -251,6 +256,7 @@ body {
 
 .indicators {
   height: 300px;
+  width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,18 +267,19 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 650px;
-          flex: 1 1 650px;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   gap: 10px;
   background-color: antiquewhite;
   border-bottom-right-radius: 10px;
   padding: 10px;
   text-align: center;
 }
-@media (max-width: 674px) {
+@media (max-width: 559px) {
   .indicators {
     border-bottom-left-radius: 10px;
-    width: 100vw;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
 }
 
@@ -294,6 +301,13 @@ body {
   gap: 5px;
   padding: 10px 0;
 }
+@media (max-width: 559px) {
+  .indicators__box {
+    width: 48%;
+    border: 1px solid #ccc;
+    height: 130px;
+  }
+}
 
 .indicators__block {
   display: -webkit-box;
@@ -307,6 +321,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 10px;
+}
+@media (max-width: 559px) {
+  .indicators__block {
+    gap: 5px;
+  }
 }
 
 .indicators__box-temperature {
@@ -325,7 +344,7 @@ body {
   font-size: 26px;
   font-weight: 600;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__box-temperature {
     font-size: 20px;
   }
@@ -367,6 +386,12 @@ body {
   height: 40px;
   margin-top: 20px;
 }
+@media (max-width: 559px) {
+  .indicators__sunrise {
+    height: auto;
+    padding-left: 0;
+  }
+}
 .indicators__sunrise::before {
   content: "";
   background: url(../img/sunrise.svg) no-repeat center;
@@ -376,12 +401,17 @@ body {
   position: absolute;
   left: 5px;
 }
+@media (max-width: 559px) {
+  .indicators__sunrise::before {
+    display: none;
+  }
+}
 
 .indicators__sunrise-time,
 .indicators__sunset-time {
   font-size: 18px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__sunrise-time,
   .indicators__sunset-time {
     font-size: 14px;
@@ -400,6 +430,12 @@ body {
   padding-left: 35px;
   height: 40px;
 }
+@media (max-width: 559px) {
+  .indicators__sunset {
+    height: auto;
+    padding-left: 0;
+  }
+}
 .indicators__sunset::before {
   content: "";
   background: url(../img/sunset.svg) no-repeat center;
@@ -409,9 +445,19 @@ body {
   position: absolute;
   left: 2px;
 }
+@media (max-width: 559px) {
+  .indicators__sunset::before {
+    display: none;
+  }
+}
 
 .indicators__box-weather {
   gap: 30px;
+}
+@media (max-width: 559px) {
+  .indicators__box-weather {
+    gap: 5px;
+  }
 }
 
 .indicators__weather-img {
@@ -422,7 +468,7 @@ body {
       -ms-transform: scale(2);
           transform: scale(2);
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__weather-img {
     -webkit-transform: scale(1.5);
         -ms-transform: scale(1.5);
@@ -436,7 +482,7 @@ body {
   font-size: 14px;
   overflow-wrap: break-word;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__weather-title {
     font-size: 12px;
   }
@@ -466,11 +512,17 @@ body {
   width: 40px;
   height: 40px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (min-width: 560px) and (max-width: 900px) {
   .indicators__humidity-img,
   .indicators__pressure-img {
     width: 30px;
     height: 30px;
+  }
+}
+@media (max-width: 559px) {
+  .indicators__humidity-img,
+  .indicators__pressure-img {
+    display: none;
   }
 }
 
@@ -478,7 +530,7 @@ body {
 .indicators__pressure-indicator {
   font-size: 18px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__humidity-indicator,
   .indicators__pressure-indicator {
     font-size: 14px;
@@ -487,6 +539,11 @@ body {
 
 .indicators__box-wind {
   gap: 20px;
+}
+@media (max-width: 559px) {
+  .indicators__box-wind {
+    gap: 5px;
+  }
 }
 
 .indicators__wind {
@@ -505,22 +562,32 @@ body {
           justify-content: center;
   gap: 10px;
 }
+@media (max-width: 559px) {
+  .indicators__wind {
+    gap: 5px;
+  }
+}
 
 .indicators__wind-img {
   width: 40px;
   height: 40px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (min-width: 560px) and (max-width: 900px) {
   .indicators__wind-img {
     width: 30px;
     height: 30px;
+  }
+}
+@media (max-width: 559px) {
+  .indicators__wind-img {
+    display: none;
   }
 }
 
 .indicators__wind-indicator {
   font-size: 18px;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__wind-indicator {
     font-size: 14px;
   }
@@ -545,8 +612,13 @@ body {
   font-size: 18px;
   overflow-wrap: break-word;
 }
-@media (min-width: 320px) and (max-width: 900px) {
+@media (max-width: 900px) {
   .indicators__directionWind-indicator {
     font-size: 14px;
+  }
+}
+@media (max-width: 559px) {
+  .indicators__directionWind-indicator {
+    gap: 5px;
   }
 }/*# sourceMappingURL=style.css.map */

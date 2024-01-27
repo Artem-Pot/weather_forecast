@@ -9,10 +9,6 @@ body {
     font-weight: 500;
 }
 
-main {
-
-}
-
 .container {
   border-radius: 20px;
   max-width: 900px;
@@ -20,6 +16,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .form {
@@ -33,12 +30,17 @@ main {
   gap: 10px;
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
+  padding: 10px;
 }
 
 .form__search {
   padding: 5px 10px;
   border-radius: 3px;
   width: 300px;
+  @media (max-width: 559px) {
+    max-width: 250px;
+    width: 100%;
+  }
 }
 
 .form__button {
@@ -61,7 +63,7 @@ main {
   flex-wrap: nowrap;
   @media (max-width: 674px) {
     flex-direction: column;
-    max-height: 400px;
+    max-height: 400px;    
   }
 }
 

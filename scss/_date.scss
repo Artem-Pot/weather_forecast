@@ -5,15 +5,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex: 1 1 250px;
     justify-content: center;
+    flex: 1 1 250px;
     gap: 40px;
     border-bottom-left-radius: 10px;
     padding: 10px;
     text-align: center;
-    @media (min-width: 320px) and (max-width: 900px) {
-      flex: 1 1 150px;
-    }
+    
     @media (max-width: 674px) {
       flex-direction: row;
       flex: 1 1 auto;
@@ -21,6 +19,7 @@
       width: 100%;
       border-bottom-left-radius: 0px;
     }
+
   }
   
   .date__box-city {
@@ -33,7 +32,7 @@
 .date__city {
   font-size: 20px;
   font-weight: 600;
-  @media (min-width: 320px) and (max-width: 900px) {
+  @media (max-width: 900px) {
     font-size: 14px;
   }
 }
@@ -41,6 +40,9 @@
   .date__box-time {
     display: flex;
     gap: 10px;
+    @media (max-width: 559px) {
+      display: none;
+    }
   }
   
   .date__box-date {
